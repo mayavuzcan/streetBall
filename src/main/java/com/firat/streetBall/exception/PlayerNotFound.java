@@ -13,7 +13,7 @@ public class PlayerNotFound extends Exception {
 
 	public PlayerNotFound(String message)
 	{
-		super();
+		super(message);
 	}
 	
 	

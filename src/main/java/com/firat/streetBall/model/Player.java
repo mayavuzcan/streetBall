@@ -3,11 +3,16 @@ package com.firat.streetBall.model;
 
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+
+@Entity
+@Table(name ="player", schema = "public")
 public class Player {
 	
 	@Id
@@ -103,6 +108,13 @@ public class Player {
 
 	@Column(name="player_ilce")
 	private String ilce;
+	
+	@Override
+	public String toString() {
+		return "Player [id=" + id + ", playerName=" + playerName + ", playerSurname=" + playerSurname
+				+ ", email=" + email + ", kadi=" + kadi + ", il=" + il + ", password="
+				+ password + ", ilce="+ilce+"]";
+	}
 
 	
 

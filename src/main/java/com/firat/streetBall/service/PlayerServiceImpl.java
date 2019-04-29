@@ -40,7 +40,7 @@ public class PlayerServiceImpl implements PlayerService{
 	}
 
 	@Override
-	public ResponseEntity<Player> save(Player player) {
+	public ResponseEntity<Player> save(@RequestBody Player player) {
 
 		
 		player = playerRespository.save(player);
