@@ -24,7 +24,7 @@ public class PlayerServiceImpl implements PlayerService{
 	PlayerRepository playerRespository;
 
 	@Override
-	public ResponseEntity<Player> login(@RequestBody Player player) throws PlayerNotFound, PasswordException {
+	public ResponseEntity<Player> login( @RequestBody Player player) throws PlayerNotFound, PasswordException {
 	
 		Optional<Player> newPlayer = playerRespository.findByEmail(player.getEmail());
 		if(newPlayer.isPresent()) {
@@ -40,7 +40,7 @@ public class PlayerServiceImpl implements PlayerService{
 	}
 
 	@Override
-	public ResponseEntity<Player> save(@RequestBody Player player) {
+	public ResponseEntity<Player> save( @RequestBody Player player) {
 
 		
 		player = playerRespository.save(player);

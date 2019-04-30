@@ -2,6 +2,10 @@ package com.firat.streetBall.model;
 
 
 
+
+
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,24 +28,29 @@ public class Player {
 	
 	@Column(name="player_name")
 	private String playerName;
-	
-	@Column(name =  "player_surname")
+
+	@Column(name ="player_surname")
 	private String playerSurname;
 	
-	@Column(name = "player_email")
+	@Column(name ="player_email")
 	private String email;
 	
 	@Column(name="player_kadi")
 	private String kadi;
 	
-	@Column(name = "player_password")
+	@Column(name ="player_password")
 	private String password;
 	
 	@Column(name="player_il")
 	private String il;
 	
+	@Column(name="player_ilce")
+	private String ilce;
 	
+	@Column(name = "licence_number")
+	private BigDecimal licenceNumber;
 	
+
 	public String getId() {
 		return id;
 	}
@@ -105,16 +114,25 @@ public class Player {
 	public void setIlce(String ilce) {
 		this.ilce = ilce;
 	}
+	
+	public BigDecimal getLicenceNumber() {
+		return licenceNumber;
+	}
 
-	@Column(name="player_ilce")
-	private String ilce;
+	public void setLicenceNumber(BigDecimal licenceNumber) {
+		this.licenceNumber = licenceNumber;
+	}
+
+
+
 	
 	@Override
 	public String toString() {
 		return "Player [id=" + id + ", playerName=" + playerName + ", playerSurname=" + playerSurname
-				+ ", email=" + email + ", kadi=" + kadi + ", il=" + il + ", password="
-				+ password + ", ilce="+ilce+"]";
+				+ ", licenceNumber=" + licenceNumber + ", email=" + email + ", kadi=" + kadi + ", il=" + il + ", password="
+				+ password + ", ilce=" + ilce +"]";
 	}
+
 
 	
 
