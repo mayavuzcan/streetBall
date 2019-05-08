@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.firat.streetBall.exception.PlayerNotFound;
 import com.firat.streetBall.exception.PasswordException;
@@ -24,9 +23,12 @@ public class PlayerServiceImpl implements PlayerService{
 	PlayerRepository playerRespository;
 
 	@Override
-	public ResponseEntity<Player> login( @RequestBody Player player) throws PlayerNotFound, PasswordException {
-	
+	public ResponseEntity<Player> login( Player player) throws PlayerNotFound, PasswordException {
+		System.out.println(player);
+
 		Optional<Player> newPlayer = playerRespository.findByEmail(player.getEmail());
+		System.out.println(newPlayer);
+		
 		if(newPlayer.isPresent()) {
 			if(StringUtils.equals(newPlayer.get().getPassword(), player.getPassword())) {
 				return new ResponseEntity<Player>(newPlayer.get(),HttpStatus.OK);
@@ -40,10 +42,10 @@ public class PlayerServiceImpl implements PlayerService{
 	}
 
 	@Override
-	public ResponseEntity<Player> save( @RequestBody Player player) {
+	public ResponseEntity<Player> save(Player player) {
 
 		
-		player = playerRespository.save(player);
+		playerRespository.save(player);
 		
 		return new ResponseEntity<Player>(HttpStatus.OK);
 	}

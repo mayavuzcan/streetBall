@@ -5,37 +5,45 @@ package com.firat.streetBall.model;
 
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
-import org.hibernate.annotations.GenericGenerator;
+import lombok.Data;
 
 
 @Entity
 @Table(name ="player", schema = "public")
+@Data
 public class Player {
-	
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
 	
-	@Column(name="player_id")
-	private String id;
+
+	
+	@Column(name="player_id",unique=true)
+	private UUID uuid=UUID.randomUUID();
 	
 	@Column(name="player_name")
 	private String playerName;
 
 	@Column(name ="player_surname")
+	
 	private String playerSurname;
 	
 	@Column(name ="player_email")
+	@Email
 	private String email;
 	
 	@Column(name="player_kadi")
+	
 	private String kadi;
 	
 	@Column(name ="player_password")
@@ -47,95 +55,6 @@ public class Player {
 	@Column(name="player_ilce")
 	private String ilce;
 	
-	@Column(name = "licence_number")
-	private BigDecimal licenceNumber;
 	
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getPlayerName() {
-		return playerName;
-	}
-
-	public void setPlayerName(String playerName) {
-		this.playerName = playerName;
-	}
-
-	public String getPlayerSurname() {
-		return playerSurname;
-	}
-
-	public void setPlayerSurname(String playerSurname) {
-		this.playerSurname = playerSurname;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getKadi() {
-		return kadi;
-	}
-
-	public void setKadi(String kadi) {
-		this.kadi = kadi;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getIl() {
-		return il;
-	}
-
-	public void setIl(String il) {
-		this.il = il;
-	}
-
-	public String getIlce() {
-		return ilce;
-	}
-
-	public void setIlce(String ilce) {
-		this.ilce = ilce;
-	}
-	
-	public BigDecimal getLicenceNumber() {
-		return licenceNumber;
-	}
-
-	public void setLicenceNumber(BigDecimal licenceNumber) {
-		this.licenceNumber = licenceNumber;
-	}
-
-
-
-	
-	@Override
-	public String toString() {
-		return "Player [id=" + id + ", playerName=" + playerName + ", playerSurname=" + playerSurname
-				+ ", licenceNumber=" + licenceNumber + ", email=" + email + ", kadi=" + kadi + ", il=" + il + ", password="
-				+ password + ", ilce=" + ilce +"]";
-	}
-
-
-	
-
-
 
 }
