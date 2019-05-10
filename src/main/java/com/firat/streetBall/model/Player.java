@@ -4,7 +4,6 @@ package com.firat.streetBall.model;
 
 
 
-import java.math.BigDecimal;
 import java.util.UUID;
 
 import javax.persistence.Column;

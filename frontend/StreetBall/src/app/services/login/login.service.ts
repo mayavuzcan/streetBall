@@ -27,6 +27,7 @@ login(player){
 
 //service loggedIn fonksiyonunun başladığı yer
 loggedIn() {
+
   return localStorage.getItem('currentUser');
 }
 //service loggedIn fonksiyonunun bittiği yer

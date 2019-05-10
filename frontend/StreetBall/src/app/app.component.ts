@@ -10,8 +10,14 @@ import { LoginService } from './services/login/login.service';
 export class AppComponent {
   constructor(private router: Router, private loginService: LoginService) {}
 
+
+  
+  ngOnInit() {
+  }
+
+
   clickLogin() {
-    this.router.navigate(['']);
+    this.router.navigate(['login']);
   }
   clickLogout() {
    localStorage.removeItem('currentUser');
