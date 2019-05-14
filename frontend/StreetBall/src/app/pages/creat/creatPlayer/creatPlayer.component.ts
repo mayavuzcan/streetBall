@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { CreatPlayerService } from 'src/app/services/CreatPlayer/CreatPlayer.service';
+import { NgForm } from '../../../../../node_modules/@angular/forms';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-creatPlayer',
@@ -7,9 +12,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatPlayerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private playerService: CreatPlayerService,private router:Router) { }
 
   ngOnInit() {
+  }
+
+  loginLink(){
+
+    this.router.navigate(['login']);
+
+
+  }
+
+  savePlayer(form: NgForm){
+    console.log(form);
+    this.playerService.savePlayer(form).subscribe(
+    resp => {
+      console.log(resp);
+            this.router.navigate(['login']);
+      }
+    );
   }
 
 }

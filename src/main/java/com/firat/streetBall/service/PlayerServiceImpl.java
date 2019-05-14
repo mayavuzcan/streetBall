@@ -24,10 +24,10 @@ public class PlayerServiceImpl implements PlayerService{
 
 	@Override
 	public ResponseEntity<Player> login( Player player) throws PlayerNotFound, PasswordException {
-		System.out.println(player);
+		
 
 		Optional<Player> newPlayer = playerRespository.findByEmail(player.getEmail());
-		System.out.println(newPlayer);
+		
 		
 		if(newPlayer.isPresent()) {
 			if(StringUtils.equals(newPlayer.get().getPassword(), player.getPassword())) {
@@ -45,8 +45,7 @@ public class PlayerServiceImpl implements PlayerService{
 	public ResponseEntity<Player> save(Player player) {
 
 		
-		playerRespository.save(player);
-		
+		player = playerRespository.save(player);		
 		return new ResponseEntity<Player>(HttpStatus.OK);
 	}
 	

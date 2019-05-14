@@ -16,6 +16,7 @@ import { FirstPageComponent } from './pages/firstPage/firstPage.component';
 import { HeaderComponent } from './header/header.component';
 
 import { CreatPlayerComponent } from './pages/creat/creatPlayer/creatPlayer.component';
+import { ProfilComponent } from './pages/profil/profil.component';
 
 
 
@@ -27,6 +28,7 @@ import { CreatPlayerComponent } from './pages/creat/creatPlayer/creatPlayer.comp
       HeaderComponent,
       CreatPlayerComponent ,
       FirstPageComponent,
+      ProfilComponent,
       HeaderComponent
    ],
    imports: [
@@ -54,6 +56,12 @@ import { CreatPlayerComponent } from './pages/creat/creatPlayer/creatPlayer.comp
             component: CreatPlayerComponent,
     
          },
+          {
+            path: 'profil',
+            component: ProfilComponent,
+    
+         },
+
 
          ])
    ],
