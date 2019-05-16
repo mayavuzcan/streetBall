@@ -17,6 +17,8 @@ import { HeaderComponent } from './header/header.component';
 
 import { CreatPlayerComponent } from './pages/creat/creatPlayer/creatPlayer.component';
 import { ProfilComponent } from './pages/profil/profil.component';
+import { LoginPageComponent } from './pages/loginPage/loginPage.component';
+import { SoloPageComponent } from './pages/SoloPage/SoloPage.component';
 
 
 
@@ -28,7 +30,9 @@ import { ProfilComponent } from './pages/profil/profil.component';
       HeaderComponent,
       CreatPlayerComponent ,
       FirstPageComponent,
+      SoloPageComponent,
       ProfilComponent,
+      LoginPageComponent,
       HeaderComponent
    ],
    imports: [
@@ -61,6 +65,17 @@ import { ProfilComponent } from './pages/profil/profil.component';
             component: ProfilComponent,
     
          },
+         {
+            path: 'welcome',
+            component: LoginPageComponent,
+    
+         },
+         {
+            path: 'soloPlay',
+            component: SoloPageComponent,
+    
+         },
+
 
 
          ])

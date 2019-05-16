@@ -1,0 +1,53 @@
+<h1 style="color:tomato"  >
+  StreetBall
+</h1>
+
+
+<body>
+
+<div class = 'Login' style = 'text-align: center'>
+  <div class="welcomePage">
+    
+        <h1 style="color:green" *ngIf = "loginService.loggedIn()"  >
+          &#10004;   Giris Yapildi
+        </h1>
+        
+        <br>
+            <div class="col-sm-12" style="text-align: center">
+            
+              <button type = 'button' class = 'btn btn-lg btn-primary btn-block ' *ngIf = "loginService.loggedIn()"  (click) = 'goSolo()' >    
+                 Solo Oyna  
+              </button>
+  
+            </div>
+        <br>
+
+          <div class="col-sm-12" style="text-align: center ">
+              <button type = 'button' class = 'btn btn-lg btn-warning btn-block' *ngIf = "loginService.loggedIn()" (click) = 'clickGoProfil()'>              
+             Profilim
+                </button>
+          </div>
+          
+        <br>
+         
+          <div class="col-sm-12" style="text-align: center">
+          
+            <button type = 'button' class = 'btn btn-lg btn-danger btn-block ' *ngIf = "loginService.loggedIn()" (click) = "clickLogout()">    
+              CIKIS YAP
+            </button>
+          
+          </div>
+  </div> 
+
+
+        
+      
+
+   
+    
+    
+  
+</div>
+
+
+</body>

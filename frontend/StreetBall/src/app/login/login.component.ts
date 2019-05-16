@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
           if(response !== null){
           
             localStorage.setItem('currentUser', JSON.stringify(response));
-            this.router.navigate(['profil']);
+            this.router.navigate(['welcome']);
           }
           this.error = 'There is no user';
         }
