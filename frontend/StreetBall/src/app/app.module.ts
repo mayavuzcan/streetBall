@@ -15,10 +15,15 @@ import { TeamComponent } from './pages/team/team.component';
 import { FirstPageComponent } from './pages/firstPage/firstPage.component';
 import { HeaderComponent } from './header/header.component';
 
-import { CreatPlayerComponent } from './pages/creat/creatPlayer/creatPlayer.component';
+import { CreatPlayerComponent } from './creat/creatPlayer/creatPlayer.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { LoginPageComponent } from './pages/loginPage/loginPage.component';
 import { SoloPageComponent } from './pages/SoloPage/SoloPage.component';
+import { PlayerService } from './services/Player/player.service';
+
+
+import { AuthGuard} from './Guard/auth.guard';
+import { PlayerUpdateComponent } from './update/Player/PlayerUpdate/PlayerUpdate.component';
 
 
 
@@ -33,6 +38,7 @@ import { SoloPageComponent } from './pages/SoloPage/SoloPage.component';
       SoloPageComponent,
       ProfilComponent,
       LoginPageComponent,
+      PlayerUpdateComponent,
       HeaderComponent
    ],
    imports: [
@@ -62,25 +68,31 @@ import { SoloPageComponent } from './pages/SoloPage/SoloPage.component';
          },
           {
             path: 'profil',
-            component: ProfilComponent,
+            component: ProfilComponent,canActivate:[AuthGuard]
     
          },
          {
             path: 'welcome',
-            component: LoginPageComponent,
+            component: LoginPageComponent,canActivate:[AuthGuard]
     
          },
          {
             path: 'soloPlay',
-            component: SoloPageComponent,
+            component: SoloPageComponent,canActivate:[AuthGuard]
     
          },
 
-
+         {
+            path: 'updatePlayer',
+            component: PlayerUpdateComponent,canActivate:[AuthGuard]
+    
+         },
 
          ])
    ],
-   providers: [LoginService],
+   providers: [LoginService,
+               PlayerService,
+               AuthGuard],
    bootstrap: [AppComponent]
 })
 export class AppModule { }

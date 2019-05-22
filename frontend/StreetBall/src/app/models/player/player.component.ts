@@ -8,6 +8,7 @@ export class Player {
   kadi: string;
   il: string;
   ilce: string;
+  id:BigInteger;
 
   constructor() {
 
@@ -18,5 +19,6 @@ export class Player {
     this.kadi = null;
     this.il = null;
     this.ilce =null;
+    this.id=null;
   }
 }

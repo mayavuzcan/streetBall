@@ -18,7 +18,7 @@ login(player){
   return this.http.post<any>('http://localhost:8080/login',player).pipe(
 
   map(player=>{
-    return player
+    return player;
   }));
 
 }

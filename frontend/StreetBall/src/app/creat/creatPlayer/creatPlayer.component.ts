@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CreatPlayerService } from 'src/app/services/CreatPlayer/CreatPlayer.service';
-import { NgForm } from '../../../../../node_modules/@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 

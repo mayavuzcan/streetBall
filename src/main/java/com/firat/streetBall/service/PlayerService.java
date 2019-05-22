@@ -1,5 +1,7 @@
 package com.firat.streetBall.service;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 
 
@@ -14,5 +16,9 @@ public interface PlayerService {
 	ResponseEntity<Player> login(Player player) throws PlayerNotFound, PasswordException;
 	
 	ResponseEntity<Player> save(Player player);
+	
+	List<Player> getAll();
+
+
 
 }

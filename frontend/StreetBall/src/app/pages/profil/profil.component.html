@@ -1,3 +1,43 @@
-<p>
-  profil works!
-</p>
+<div class = 'container'>
+	<table class = 'table table-hover'>
+	  <div class = 'header'>
+		<h3>Bilgilerim</h3>
+	  </div>  
+	  <br>
+	  <tr>
+		<th>Ad:</th>
+		<td>{{ players.playerName }}</td>
+	  </tr>
+	  <tr>
+		<th>Soyad:</th>
+		<td>{{players.playerSurname }}</td>
+	  </tr>
+	  <tr>
+		<th>Kullanıcı Adı:</th>
+		<td>{{ players.kadi}}</td>
+	  </tr>
+	  <tr>
+		<th>Şehir:</th>
+		<td>{{players.il}}</td>
+	  </tr>
+	  <tr>
+		<th>Ilce:</th>
+		<td>{{ players.ilce}}</td>
+	  </tr>
+	  <tr>
+		<th>Email:</th>
+		<td>{{ players.email }}</td>
+	  </tr>
+	  
+	</table>
+
+	<div class="col-sm-6" style="text-align: right">
+            
+		<button type = 'button' class = 'btn btn-lg btn-primary btn-block ' (click) = 'updateLink(players)' >    
+		
+				Duzenle 
+
+			</button>
+	
+</div>
+  </div>

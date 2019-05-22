@@ -12,7 +12,8 @@ import { LoginService } from '../services/login/login.service';
 export class LoginComponent implements OnInit {
   error='';
 
-  constructor(private router:Router,private loginService:LoginService) { }
+  constructor(private router:Router,
+              private loginService:LoginService) { }
 
   @ViewChild('loginForm') loginForm: NgForm;
 

@@ -1,6 +1,7 @@
 package com.firat.streetBall.service;
 
 
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.commons.lang3.StringUtils;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.firat.streetBall.exception.PlayerNotFound;
 import com.firat.streetBall.exception.PasswordException;
 import com.firat.streetBall.model.Player;
+
 import com.firat.streetBall.dao.PlayerRepository;
 
 
@@ -49,6 +51,11 @@ public class PlayerServiceImpl implements PlayerService{
 		return new ResponseEntity<Player>(HttpStatus.OK);
 	}
 	
+	
+	@Override
+	public List<Player> getAll(){
+		return playerRespository.findAll();
+	}
 
 
 

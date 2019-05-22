@@ -20,4 +20,6 @@ public interface PlayerRepository extends JpaRepository<Player, Long>{
 	@Query(value = "SELECT u FROM Player u WHERE email = ?1")
 	Player login(String mail);
 
+
+
 }
