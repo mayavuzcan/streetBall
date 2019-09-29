@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CreatPlayerComponent implements OnInit {
 
-  constructor(private playerService: CreatPlayerService,private router:Router) { }
+  constructor(private playerService: CreatPlayerService, private router:Router) { }
 
   ngOnInit() {
   }

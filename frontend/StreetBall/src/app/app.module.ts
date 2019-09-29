@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -24,6 +25,9 @@ import { PlayerService } from './services/Player/player.service';
 
 import { AuthGuard} from './Guard/auth.guard';
 import { PlayerUpdateComponent } from './update/Player/PlayerUpdate/PlayerUpdate.component';
+import { ComunityComponent } from './comunity/comunity.component';
+import { NewPlayerComponent } from './pages/newPlayer/newPlayer.component';
+import { NewUpdateplayerComponent } from './pages/newUpdateplayer/newUpdateplayer.component';
 
 
 
@@ -39,7 +43,9 @@ import { PlayerUpdateComponent } from './update/Player/PlayerUpdate/PlayerUpdate
       ProfilComponent,
       LoginPageComponent,
       PlayerUpdateComponent,
-      HeaderComponent
+      ComunityComponent,
+      NewPlayerComponent,
+      NewUpdateplayerComponent
    ],
    imports: [
       BrowserModule,
@@ -53,39 +59,44 @@ import { PlayerUpdateComponent } from './update/Player/PlayerUpdate/PlayerUpdate
          {
             path: 'login',
             component: LoginComponent,
-    
          },
 
          {
             path: '',
             component: FirstPageComponent,
-    
          },
          {
             path: 'creatPlayer',
             component: CreatPlayerComponent,
-    
          },
           {
             path: 'profil',
             component: ProfilComponent,canActivate:[AuthGuard]
-    
          },
          {
             path: 'welcome',
             component: LoginPageComponent,canActivate:[AuthGuard]
-    
          },
          {
             path: 'soloPlay',
             component: SoloPageComponent,canActivate:[AuthGuard]
-    
          },
 
          {
             path: 'updatePlayer',
             component: PlayerUpdateComponent,canActivate:[AuthGuard]
-    
+         },
+         {
+         path: 'comunityPage',
+         component: ComunityComponent
+         },
+         {
+            path: 'newPlayer',
+            component: NewPlayerComponent
+         },
+         {
+               path: 'newPlayerUpdate',
+               component: NewUpdateplayerComponent
          },
 
          ])

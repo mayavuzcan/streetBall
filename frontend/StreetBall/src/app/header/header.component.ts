@@ -25,5 +25,9 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['creatPlayer']);
 
   }
+  clickGoIletisim(){
+    this.router.navigate(['comunityPage']);
+
+  }
 
 }

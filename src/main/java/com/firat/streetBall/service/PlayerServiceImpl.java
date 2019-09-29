@@ -2,7 +2,9 @@ package com.firat.streetBall.service;
 
 
 import java.util.List;
+
 import java.util.Optional;
+
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +48,7 @@ public class PlayerServiceImpl implements PlayerService{
 	@Override
 	public ResponseEntity<Player> save(Player player) {
 
-		
+		System.out.println(player);
 		player = playerRespository.save(player);		
 		return new ResponseEntity<Player>(HttpStatus.OK);
 	}
@@ -56,6 +58,30 @@ public class PlayerServiceImpl implements PlayerService{
 	public List<Player> getAll(){
 		return playerRespository.findAll();
 	}
+	
+	/*
+	@Override
+	public PlayerQueryDTO updatePlayer(UUID id,UpdatePlayer playerUpdateDTO) {
+		 if (playerRespository.findById(id).isPresent()){
+	            Player newupPlayer = playerRespository.findById(id).get();
+
+	            newupPlayer.setPlayerName(playerUpdateDTO.getPlayerName());
+	            newupPlayer.setPlayerSurname(playerUpdateDTO.getPlayerSurname());
+	            newupPlayer.setIl(playerUpdateDTO.getIl());
+	            newupPlayer.setIlce(playerUpdateDTO.getIlce());
+
+	            
+
+
+	            Player updatedPlayer = playerRespository.save(newupPlayer);
+
+	        return new PlayerQueryDTO(updatedPlayer.getId(), updatedPlayer.getPlayerName(),
+	            		updatedPlayer.getPlayerSurname(), updatedPlayer.getEmail(),updatedPlayer.getPassword());
+	        }
+		 else{
+	            return null;
+	        }
+	}*/
 
 
 

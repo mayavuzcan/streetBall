@@ -1,88 +1,105 @@
-
-    
-  
 <body>
-    
-    
-  <div class = 'Login' style = 'text-align: center'>
-    
-      <form class = 'formSignin' #newPlayerForm= 'ngForm'>
-          
-         
-          <div class = 'input-group' >  
-              <span class = 'class'><i class="fa fa-user"></i></span>
-               <input type = 'text' class = 'form-control' id = 'inputId' name = 'id' 
-               [(ngModel)]="players.id" required  >  
-        </div>
-        <br>
-        <div class = 'input-group'>  
-              <span class = 'class'><i class="fa fa-user"></i></span>
-               <input type = 'text' class = 'form-control' id = 'inputPlayerName' name = 'playerName' 
-                 [(ngModel)]="players.playerName" required >  
-        </div>
-        <br>
-
-        <div class = 'input-group'>  
-            <span class = 'class'><i class="fa fa-user"></i></span>
-             <input type = 'text' class = 'form-control' id = 'inputPlayerSurname' name = 'playerSurname' 
-             [(ngModel)]="players.playerSurname" required >  
+  <div class="Login" style="text-align: center">
+    <form class="formSignin" #newPlayerForm="ngForm">
+      <br />
+      <div class="input-group">
+        <span class="class"><i class="fa fa-user"></i></span>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPlayerName"
+          name="playerName"
+          [(ngModel)]="players.playerName"
+          required
+        />
       </div>
-      <br>
+      <br />
 
-        
-        <div class = 'input-group'>  
-              <span class = 'class'><i class="fa fa-user"></i></span>
-               <input type = 'text' class = 'form-control' id = 'inputKadi' name = 'kadi' 
-               [(ngModel)]="players.kadi" >  
-        </div>
-        <br>
-        <div class = 'input-group'>  
-            <span class = 'class'><i class="fa fa-user"></i></span>
-             <input type = 'text' class = 'form-control' id = 'inputİl' name = 'il' 
-             [(ngModel)]="players.il" required >  
-        </div>
-              <br>
-        <div class = 'input-group'>  
-            <span class = 'class'><i class="fa fa-user"></i></span>
-             <input type = 'text' class = 'form-control' id = 'inputİlce' name = 'ilce' 
-             [(ngModel)]="players.ilce" required >  
-        </div>
-<br>
-<div class = 'input-group'>  
-    <span class = 'class'><i class="fa fa-user"></i></span>
-     <input type = 'text' class = 'form-control' id = 'inputEmail' name = 'email' 
-     [(ngModel)]="players.email"   >  
-</div>
-<br>
-        <div class = 'input-group'>  
-            <span class = 'class'><i class="fa fa-user"></i></span>
-             <input type = 'text' class = 'form-control' id = 'inputPassword' name = 'password' 
-             [(ngModel)]="players.password"  >  
-        </div>
-<br>
-            <div class="col-sm-12" style="text-align: right; margin-left: 20px">
-                <button type = 'submit' class = 'btn btn-lg btn-warning btn-block' (click) = 'savePlayer(newPlayerForm.value)' [disabled] = '!newPlayerForm.valid' >              
-                    Kaydet
-                  </button>
-            </div>
-            
-            <br>
-            
-             
-  
-  
-          
-        
+      <div class="input-group">
+        <span class="class"><i class="fa fa-user"></i></span>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPlayerSurname"
+          name="playerSurname"
+          [(ngModel)]="players.playerSurname"
+          required
+        />
+      </div>
+      <br />
 
-     
-      
-      </form>  
-    
+      <div class="input-group">
+        <span class="class"><i class="fa fa-user"></i></span>
+        <input
+          type="text"
+          class="form-control"
+          id="inputKadi"
+          name="kadi"
+          [(ngModel)]="players.kadi"
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="class"><i class="fa fa-user"></i></span>
+        <input
+          type="text"
+          class="form-control"
+          id="inputİl"
+          name="il"
+          [(ngModel)]="players.il"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="class"><i class="fa fa-user"></i></span>
+        <input
+          type="text"
+          class="form-control"
+          id="inputİlce"
+          name="ilce"
+          [(ngModel)]="players.ilce"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="class"><i class="fa fa-user"></i></span>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail"
+          name="email"
+          [(ngModel)]="players.email"
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="class"><i class="fa fa-user"></i></span>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword"
+          name="password"
+          *ngIf="players.id == 4"
+          [(ngModel)]="players.password"
+        />
+      </div>
+      <br />
+      <div class="col-sm-12" style="text-align: right; margin-left: 20px">
+        <button
+          type="submit"
+          class="btn btn-lg btn-warning btn-block"
+          (click)="savePlayer(newPlayerForm.value)"
+          [disabled]="!newPlayerForm.valid"
+        >
+          Kaydet
+        </button>
+      </div>
+
+      <br />
+    </form>
   </div>
 
-  <div>
-
-    
-
-  </div>
+  <div></div>
 </body>

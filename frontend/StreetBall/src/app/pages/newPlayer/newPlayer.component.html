@@ -1,0 +1,26 @@
+<div class='container'>
+
+	<h3>Oyuncular</h3>
+
+	<table class="table table-hover">
+
+		<tr>
+			<th scope = 'col'>#</th>
+			<th scope = 'col'>Ad</th>
+			<th scope = 'col'>Soyad</th>
+		
+			
+		</tr>
+
+		<tbody  *ngIf="playerss.id == 4">
+			<tr *ngFor='let player of players; let i = index'>
+				<th>{{i + 1}}</th>
+				<td>{{ player.playerName }}</td>
+				<td>{{ player.playerSurname }}</td>
+				
+			<td>	<button class = 'btn btn-outline-primary btn-sm' (click) = 'clickProfile(player)'>Profile</button></td>
+			</tr>
+
+		</tbody>
+	</table>
+	<br>

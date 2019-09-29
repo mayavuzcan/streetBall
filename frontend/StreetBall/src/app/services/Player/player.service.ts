@@ -8,24 +8,24 @@ import { Observable } from 'rxjs';
 })
 export class PlayerService {
   selectedPlayer: Player;
-  currentUser:Player=new Player();
+  currentUser: Player = new Player();
 
   private playerUrl = 'http://localhost:8080/player';
 constructor(private http: HttpClient) { }
-getPlayer(): Observable<Player[]>{
+getPlayer(): Observable<Player[]> {
   return this.http.get<Player[]>(this.playerUrl).pipe();
 }
 
 
-setSelectedPlayer(player: Player){
+setSelectedPlayer(player: Player) {
   this.selectedPlayer = player;
 }
 
 getSelectedPlayer() {
-  
+
   return this.selectedPlayer;
 }
-savePlayer(player){
+savePlayer(player) {
   return this.http.post('http://localhost:8080/updatePlayer', player).pipe();
 }
 }
